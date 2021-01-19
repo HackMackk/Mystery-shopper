@@ -1,0 +1,24 @@
+.logo {
+    position: fixed;
+    left: 50px;
+    top: 36px;
+    z-index: 600;
+    width: 15.3vw;
+    height: auto;
+    transition: opacity .2s ease;
+
+    @media (max-width: 1366px) {
+        top: 30px;
+    }
+
+    @media (max-width: 768px) {
+        width: 46vw;
+        left: 17px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}

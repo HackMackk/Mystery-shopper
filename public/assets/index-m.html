@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самокат - Тайный покупатель</title>
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .top {
+            position: relative
+        }
+
+        .top>* {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0
+        }
+
+        .main-image {
+            height: 94vh;
+        }
+
+        .layer2,
+        .layer4 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+        }
+
+        .layer3 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+        }
+
+        .layer1 {
+            background: #00023d;
+        }
+
+        .layer1,
+        .layer5 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollMagic.min.js"></script>
+    <script src="assets/js/animation.gsap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        
+        var fullWidth = $(document).width()
+        var sWidth = fullWidth/2
+
+        var perWidth =  sWidth/fullWidth*100
+
+        console.log(perWidth)
+
+        var tl = new TimelineMax();
+
+        var sl = tl.to(".layer1, .layer5", 6, {
+            width: 100 + '%',
+            transformOrigin: 'center center'
+        })
+
+        $(document).on('scroll', function(){
+            var w = $('.layer1').width()
+            $('.layer2, .layer4').width(w)
+        }).trigger('scroll')
+
+        var ol = tl.to(".layer2, .layer4", 10, {
+            width: 100 + '%',
+            opacity: 1,
+            transformOrigin: 'center center'
+            }, "-=4")
+
+        $(".layer3").css('width', sWidth)
+            
+        var vl = tl.to(".layer3", 15, {
+            //left: 55 + '%',
+            left: 15 + '%',
+            opacity: 1,
+            width: perWidth + '%'
+        }, "-=5.5")
+
+        var h = $('.top').height() * 2
+        var controller = new ScrollMagic.Controller();
+        var scene = new ScrollMagic.Scene({
+            offset: 0,
+            duration: h
+        })
+
+        scene.setTween(sl)
+        scene.setTween(ol)
+        //scene.setTween(vl)
+        scene.addTo(controller)
+
+        $('.top').height(h)
+
+        $(".carousel").owlCarousel({
+            items: 1
+        })
+    })
+
+    </script>
+
+</head>
+
+<body>
+    <div class="top">
+        <div class="main-image">
+            <img src="assets/img/layer/05_layer.svg" class="layer1">
+            <img src="assets/img/layer/06_layer.svg" class="layer2">
+            <img src="assets/img/layer/07_layer.svg" class="layer3">
+            <img src="assets/img/layer/08_layer.svg" class="layer4">
+            <img src="assets/img/layer/09_layer.svg" class="layer5">
+        </div>
+    </div>
+    <div class="carousel owl-carousel">
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet
+        voluptatum distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum
+        distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor
+        sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio
+        vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id
+        ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id ex, quasi
+        quam officiis libero nemo provident iure neque reiciendis?</div>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet
+        voluptatum distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum
+        distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor
+        sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio
+        vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id
+        ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id ex, quasi
+        quam officiis libero nemo provident iure neque reiciendis?</div>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet
+        voluptatum distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum
+        distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor
+        sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio
+        vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id
+        ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id ex, quasi
+        quam officiis libero nemo provident iure neque reiciendis?</div>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet
+        voluptatum distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum
+        distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor
+        sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio
+        vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id
+        ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id ex, quasi
+        quam officiis libero nemo provident iure neque reiciendis?</div>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet
+        voluptatum distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum
+        distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor
+        sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio
+        vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id
+        ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id ex, quasi
+        quam officiis libero nemo provident iure neque reiciendis?</div>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet
+        voluptatum distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum
+        distinctio vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor
+        sit amet consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio
+        vel? Quos id ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id
+        ex, quasi quam officiis libero nemo provident iure neque reiciendis? Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Tempore iure beatae ut consequatur ducimus amet voluptatum distinctio vel? Quos id ex, quasi
+        quam officiis libero nemo provident iure neque reiciendis?</div>
+    </div>
+</body>
+</html>

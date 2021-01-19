@@ -1,0 +1,88 @@
+ol {
+    list-style-type: none;
+    counter-reset: list list4 4 list9 10;
+    font-size: 2.3vw;
+
+    @media(max-width: 768px) {
+        font-size: 26px;
+    }
+
+    li {
+        position: relative;
+    }
+
+    &.list {
+        li {
+
+            @media (max-width: 768px) {
+                margin-left: 5px;
+            }
+
+            &:before {
+                content: counter(list);
+                counter-increment: list;
+                position: absolute;
+                left: -2.6vw;
+                color: $listColor;
+                top: .7vw;
+                font-size: 1.5vw;
+
+                @media(max-width: 768px) {
+                    left: -20px;
+                    top: 5px;
+                    font-size: 5vw;
+                }
+            }
+        }
+    }
+
+    &.list4 {
+        li {
+
+            @media (max-width: 768px) {
+                margin-left: 5px;
+            }
+
+            &:before {
+                content: counter(list4);
+                counter-increment: list4;
+                position: absolute;
+                left: -2.6vw;
+                color: $listColor;
+                top: 0.7vw;
+                font-size: 1.5vw;
+
+                @media(max-width: 768px) {
+                    left: -20px;
+                    top: 5px;
+                    font-size: 5vw;
+                }
+            }
+        }
+    }
+
+    &.list9 {
+        li {
+
+            @media (max-width: 768px) {
+                margin-left: 5px;
+            }
+
+            &:before {
+                content: counter(list9);
+                counter-increment: list9;
+                position: absolute;
+                left: -2.6vw;
+                color: $listColor;
+                top: 0.7vw;
+                font-size: 1.5vw;
+
+                @media(max-width: 768px) {
+                    left: -20px;
+                    top: 5px;
+                    font-size: 5vw;
+                }
+            }
+        }
+    }
+}

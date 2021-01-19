@@ -1,0 +1,42 @@
+.text-mobile-wrapper {
+
+    background: $backTop;
+    color: $white;
+    padding: 0 5vw;
+    height: 175vh;
+    position: relative;
+
+    .top-text-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        margin-top: 0;
+
+        .top-text__title {
+            font-size: 4.23vh;
+            display: block;
+            margin-bottom: 8.9vw;
+        }
+
+        .top-text__description {
+            margin-bottom: 20vh;
+
+            @media (max-width: 768px) {
+                font-size: 2.9vh;
+            }
+        }
+    }
+
+    .glass-mobile {
+        width: 13.38vh;
+        position: absolute;
+        bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}

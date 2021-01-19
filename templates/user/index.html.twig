@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Создание пользователя{% endblock %}
+{% block stylesheets %}
+  <style type="text/css">
+   .form{
+       display: flex;
+       height: 95vh;
+       justify-content: center;
+       align-items: center;
+   }
+   .form form{
+        display: flex;
+        flex-direction: column;
+   }
+   .form form input{
+        margin: 10px 0 8px 0;
+   }
+   .form form button{
+        color: #fff;
+        margin-top: 20px;
+        border: none;
+        text-decoration: none;
+        user-select: none;
+        background: rgb(210,73,54);
+        padding: .7em 1.5em;
+        outline: none;
+   }
+  </style>
+{% endblock %}
+
+{% block body %}
+
+<div class="form">
+ {% for message in app.flashes('error') %}
+            <div>
+                <h1>{{ message }}</h1>
+            </div>
+{% endfor %}
+{{ form_start(form) }}
+
+{{ form_label(form.username) }}
+{{ form_widget(form.username) }}
+
+{{ form_label(form.password) }}
+{{ form_widget(form.password) }}
+
+{{ form_end(form) }}
+</div>
+{% endblock %}

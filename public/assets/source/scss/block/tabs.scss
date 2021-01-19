@@ -1,0 +1,257 @@
+.tabs-container {
+    margin-top: -2px;
+}
+.tabs-wrapper {
+    background: $tabsFon;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: -1px;
+    z-index: 9;
+}
+.tabs-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 25%;
+    padding: 70px 0 40px 0;
+
+    @media (max-width: 1366px) {
+        padding: 40px 0 30px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 29px 17px 28px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+}
+.tablinks {
+    background: none;
+    border: none;
+    color: $white;
+    font-size: 1.5vw;
+    outline: none;
+
+    &:hover {
+        color: $redHover;
+    }
+
+    @media (max-width: 992px) {
+        font-size: 16px;
+    }
+
+    @media(max-width: 768px) {
+        font-size: 18px;
+    }
+
+    &.active {
+        border-bottom: 0.15vw solid $white;
+        pointer-events: none;
+        color: $white;
+
+        @media (max-width: 992px) {
+            border-bottom: 2px solid $white;
+        }
+
+        @media (max-width: 768px) {
+            border-bottom: 2px solid $white;
+        }
+
+        &:hover {
+            @media (max-width: 768px) {
+                color: $white;
+            }
+        }
+    }
+
+    &:last-child {
+        @media (max-width: 768px) {
+            margin-left: 60px;
+        }
+    }
+}
+.tab {
+    /*display: none;*/
+    background: $formfon;
+    padding: 200px 100px;
+    font-size: 2.3vw;
+
+    @media (max-width: 992px) {
+        font-size: 24px;
+        padding: 130px 75px 10px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 26px;
+        padding: 50px 30px;
+    }
+
+    &:last-child {
+        @media (max-width: 768px) {
+            padding: 50px 30px 30px;
+        }
+    }
+
+    ol {
+        width: 55%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+        /*
+        li {
+            margin-bottom: 60px;
+        }
+        */
+    }
+
+    p {
+        width: 75%;
+        margin-top: 5vh;
+
+        @media (max-width: 992px) {
+            font-size: 22px;
+            width: 80%;
+        }
+ 
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    /*
+    button {
+        background: none;
+        border: none;
+        border-bottom: 4px solid;
+        font-size: 2.3vw;
+
+        @media (max-width: 768px) {
+            font-size: 26px;
+        }
+
+        &:hover {
+            color: $red;
+            border-bottom: 4px solid #ff486F;
+        }
+    }*/
+
+    a {
+        border-bottom: 0.21vw solid;
+        pointer-events: all;
+
+        @media (max-width: 768px) {
+            font-size: 26px;
+            border-bottom: 2px solid;
+        }
+
+        &:hover {
+            color: $red;
+            border-bottom: 0.21vw solid #ff486F;
+        }
+    }
+
+    .bg-button {
+        border: none;
+        background: $red;
+        color: $buttonColor;
+        border-radius: 100px;
+        margin-top: 4.73vw;
+        width: 27vw;
+        height: 7.8vw;
+        font-size: 1.7vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 992px) {
+            font-size: 18px;
+
+        }
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+            width: auto;
+            height: 85px;
+            margin-top: 50px;
+            margin-left: -15px;
+            margin-right: -15px
+        }
+
+        &:hover {
+            color: $formfon;
+            background: $redHover;
+            outline: none;
+            border-bottom: none;
+            transition: background .3s ease;
+        }
+    }
+
+    &.active {
+        display: block;
+    }
+
+    .text-after-form {
+        margin-top: 5.25vw;
+        width: 75%;
+        color: #00000036;
+        font-size: 1.47vw;
+
+        @media (max-width: 992px) {
+            font-size: 16px;
+            width: 85%;
+        }
+
+        @media(max-width: 768px) {
+            font-size: 16px;
+            margin-top: 42px;
+            width: 105%;
+        }
+
+        .politics {
+            @media (max-width: 768px) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+#instruction {
+    ol {
+
+        @media (max-width: 768px) {
+            margin-top: 50px;
+        }
+
+        li {
+            &:first-child {
+                margin-bottom: 2.10vw;
+
+                @media (max-width: 768px) {
+                    margin-bottom: 45px;
+                }
+            }
+
+            
+        }
+
+        li {
+            margin-bottom: 4.73vw;
+
+            @media (max-width: 768px) {
+                margin-bottom: 45px;
+            }
+        }
+
+    }
+
+    p {
+        @media (max-width: 768px) {
+            margin-top: 10px;
+            display: inline-block;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+}

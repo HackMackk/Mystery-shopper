@@ -1,0 +1,85 @@
+.slide-mobile {
+
+    font-size: 28px;
+    height: 175vh;
+
+    @media(min-width: 576px) {
+        font-size: 45px;
+    }
+
+    @media(min-width: 768.02px) {
+        display: none;
+    }
+
+    p {
+        color: $white;
+        width: 80%;
+        margin: 30px 0 0 25px;
+    }
+
+    a {
+        color: $white;
+    }
+
+    .owl-carousel {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        img {
+            width: 65%;
+            margin: 0 auto;
+        }
+    }
+
+    .slide-1 {
+        background: $red;
+        min-height: 100vh;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .slide-2 {
+        background: $green;
+        min-height: 100vh;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+            border-bottom: 2px solid #fff
+        }
+    }
+
+    .slide-3 {
+        background: $blue;
+        min-height: 100vh;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .owl-dots {
+        position: absolute;
+        left: 25%;
+        right: 25%;
+        bottom: 3px;
+
+        .owl-dot {
+            span {
+                background: url("../img/owl-dot.svg");
+                width: 15px;
+                height: 15px;
+            }
+
+            &.active {
+                span{
+                    background: $white;
+                }
+            }
+        }
+    }
+}
